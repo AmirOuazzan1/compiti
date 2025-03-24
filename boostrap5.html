@@ -6,12 +6,12 @@
   <title>Lezione Interattiva: Bootstrap 5</title>
   <!-- Bootstrap 5 dal CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    /* Impostazioni generali - Nuova Palette Calda */
+    /* Impostazioni generali - Palette Calda Rivisitata */
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #FF7E5F, #FEB47B);
@@ -27,7 +27,7 @@
       100% { background-position: 0% 50%; }
     }
     
-    /* Stile slide: nuovo sfondo semi-trasparente scuro */
+    /* Stile slide: sfondo semi-trasparente con bordi morbidi e animazione */
     .slide {
       display: none;
       position: absolute;
@@ -37,11 +37,12 @@
       height: 90vh;
       padding: 4rem 3rem;
       box-sizing: border-box;
-      background: rgba(20, 20, 20, 0.8);
-      border-radius: 15px;
-      backdrop-filter: blur(2px);
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 20px;
+      backdrop-filter: blur(3px);
       transition: transform 0.6s ease, opacity 0.6s ease;
       overflow-y: auto;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     }
     
     .active {
@@ -55,14 +56,14 @@
       transform: scale(0.95);
     }
     
-    /* Tipografia e ombre per migliorare la leggibilità */
+    /* Tipografia con ombre leggere per una maggiore leggibilità */
     h1, h2, h3, p, li {
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
     
-    h1 { font-size: 3rem; margin-bottom: 1rem; }
-    h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    h3 { font-size: 2rem; margin-bottom: 1rem; }
+    h1 { font-size: 3.2rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.7rem; margin-bottom: 1rem; }
+    h3 { font-size: 2.2rem; margin-bottom: 1rem; }
     p, li { font-size: 1.2rem; }
     
     ul {
@@ -76,7 +77,7 @@
       color: #FFD700;
     }
     
-    /* Navigazione: pulsanti aggiornati */
+    /* Navigazione: pulsanti arrotondati e con effetto hover accentuato */
     .navigation {
       position: absolute;
       bottom: 30px;
@@ -87,37 +88,38 @@
     .navigation button {
       margin-left: 10px;
       border-radius: 50px;
-      padding: 10px 20px;
+      padding: 10px 25px;
       font-weight: 700;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
       transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
     }
     
     .navigation button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
     }
     
-    /* Info Relatore: colore di sfondo aggiornato */
+    /* Info Relatore: design pulito e moderno */
     .speaker-info {
       position: absolute;
       top: 20px;
       right: 30px;
       font-weight: 700;
       font-size: 1.1rem;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 8px 15px;
-      border-radius: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
     
-    /* Stile Quiz: nuove tonalità */
+    /* Stile Quiz: card traslucide con angoli arrotondati */
     .quiz-container {
       margin-top: 2rem;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.2);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
     }
     
     .quiz-question {
@@ -136,7 +138,7 @@
     }
     
     .quiz-option:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.3);
       transform: scale(1.02);
     }
     
@@ -165,7 +167,7 @@
         Bootstrap 5 è un framework open source per lo sviluppo di interfacce web responsive e moderne. È stato progettato per semplificare la creazione di siti web con design pulito e funzionale, grazie a una vasta gamma di componenti predefiniti e utility che facilitano il lavoro degli sviluppatori.
       </p>
       <p>
-        La sua flessibilità e la capacità di personalizzazione lo rendono uno strumento ideale per realizzare progetti di ogni dimensione, dal prototipo al prodotto finale.
+        La sua flessibilità e capacità di personalizzazione lo rendono uno strumento ideale per progetti di ogni dimensione, dal prototipo al prodotto finale.
       </p>
     </div>
   </div>
@@ -175,10 +177,10 @@
     <div class="container">
       <h2>Storia ed Evoluzione</h2>
       <p>
-        Lanciato originariamente da Twitter, Bootstrap ha subito numerose evoluzioni nel tempo. La versione 5, lanciata nel 2020, ha segnato un importante cambiamento eliminando la dipendenza da jQuery e introducendo nuove funzionalità e componenti.
+        Lanciato originariamente da Twitter, Bootstrap ha subito numerose evoluzioni. La versione 5, lanciata nel 2020, ha segnato un importante cambiamento eliminando la dipendenza da jQuery e introducendo nuove funzionalità.
       </p>
       <p>
-        Questa evoluzione ha reso Bootstrap ancora più leggero e performante, adattandosi alle esigenze moderne di sviluppo web e consentendo agli sviluppatori di creare esperienze utente ancora più dinamiche e interattive.
+        Questa evoluzione ha reso Bootstrap ancora più leggero e performante, adattandosi alle esigenze moderne di sviluppo web e consentendo esperienze utente più dinamiche.
       </p>
     </div>
   </div>
@@ -198,7 +200,7 @@
         <li>Alert, Badge, Button e molto altro</li>
       </ul>
       <p>
-        Questi componenti permettono di creare interfacce utente coerenti e funzionali, risparmiando tempo e sforzi nello sviluppo.
+        Questi componenti permettono di creare interfacce utente coerenti e funzionali, risparmiando tempo nello sviluppo.
       </p>
     </div>
   </div>
@@ -211,7 +213,7 @@
         Il cuore di Bootstrap 5 è il suo sistema a griglia responsive, che permette di realizzare layout complessi in modo semplice e intuitivo.
       </p>
       <p>
-        Grazie alle classi predefinite, è possibile definire colonne, righe e container che si adattano automaticamente a schermi di diverse dimensioni, garantendo un’esperienza utente ottimale su dispositivi mobile, tablet e desktop.
+        Con le classi predefinite, è possibile definire colonne, righe e container che si adattano a schermi di diverse dimensioni, garantendo un’esperienza ottimale su dispositivi mobile, tablet e desktop.
       </p>
     </div>
   </div>
@@ -221,10 +223,10 @@
     <div class="container">
       <h2>Utility e Personalizzazione</h2>
       <p>
-        Bootstrap 5 non si limita a fornire componenti predefiniti: offre anche un vasto insieme di utility per il controllo di spaziature, colori, tipografia, allineamenti e molto altro.
+        Bootstrap 5 non si limita a fornire componenti predefiniti: offre anche un insieme di utility per il controllo di spaziature, colori, tipografia, allineamenti e molto altro.
       </p>
       <p>
-        Queste utility consentono agli sviluppatori di personalizzare facilmente ogni aspetto del design, mantenendo una coerenza visiva e sfruttando al massimo le potenzialità del framework.
+        Queste utility consentono agli sviluppatori di personalizzare facilmente ogni aspetto del design, mantenendo una coerenza visiva sfruttando al massimo le potenzialità del framework.
       </p>
     </div>
   </div>
@@ -234,10 +236,10 @@
     <div class="container">
       <h2>Esempi Pratici</h2>
       <p>
-        Diversi siti web di successo utilizzano Bootstrap 5 per garantire un design moderno e responsive. Dalle piattaforme di e-commerce ai siti aziendali, il framework dimostra la sua versatilità in numerosi contesti.
+        Diversi siti web di successo utilizzano Bootstrap 5 per garantire un design moderno e responsive. Dalle piattaforme di e-commerce ai siti aziendali, il framework dimostra la sua versatilità.
       </p>
       <p>
-        Durante questa lezione vedremo alcuni esempi pratici e analizzeremo come personalizzare i componenti per adattarli al brand e alle esigenze specifiche del progetto.
+        Durante questa lezione vedremo alcuni esempi pratici e come personalizzare i componenti per adattarli al brand e alle esigenze specifiche del progetto.
       </p>
     </div>
   </div>
@@ -247,10 +249,10 @@
     <div class="container">
       <h2>Integrazione con JavaScript</h2>
       <p>
-        Uno dei punti di forza di Bootstrap 5 è la sua integrazione con JavaScript. Il framework include plugin per gestire interazioni dinamiche come modali, tooltip, dropdown e carousel, offrendo un’esperienza utente fluida e interattiva.
+        Uno dei punti di forza di Bootstrap 5 è l'integrazione con JavaScript. Il framework include plugin per gestire interazioni dinamiche come modali, tooltip, dropdown e carousel, offrendo un’esperienza utente fluida.
       </p>
       <p>
-        L’assenza di dipendenza da jQuery nella versione 5 permette inoltre una maggiore leggerezza e performance, rendendo più semplice l’integrazione con librerie esterne e framework moderni.
+        L’assenza di dipendenza da jQuery permette una maggiore leggerezza e una più semplice integrazione con librerie esterne e framework moderni.
       </p>
     </div>
   </div>
@@ -259,24 +261,20 @@
   <div id="slide9" class="slide">
     <div class="container">
       <h2>Vantaggi e Svantaggi</h2>
-      <p>
-        <strong>Vantaggi:</strong>
-      </p>
+      <p><strong>Vantaggi:</strong></p>
       <ul>
         <li>Sviluppo rapido grazie ai componenti predefiniti</li>
         <li>Design responsive out-of-the-box</li>
-        <li>Personalizzazione elevata con utility e variabili CSS</li>
+        <li>Elevata personalizzazione con utility e variabili CSS</li>
         <li>Comunità attiva e documentazione completa</li>
       </ul>
-      <p>
-        <strong>Svantaggi:</strong>
-      </p>
+      <p><strong>Svantaggi:</strong></p>
       <ul>
         <li>Overhead per progetti molto semplici</li>
-        <li>Personalizzazioni estreme possono richiedere modifiche approfondite</li>
+        <li>Personalizzazioni estreme possono richiedere interventi approfonditi</li>
       </ul>
       <p>
-        In sintesi, Bootstrap 5 è uno strumento potente e versatile, ideale per chi desidera realizzare siti moderni in tempi ridotti, pur mantenendo elevate possibilità di personalizzazione.
+        In sintesi, Bootstrap 5 è uno strumento potente e versatile, ideale per realizzare siti moderni in tempi ridotti, pur mantenendo elevate possibilità di personalizzazione.
       </p>
     </div>
   </div>
@@ -395,7 +393,7 @@
       }
     });
     
-    // Gestione quiz: per ogni opzione, al click mostra il feedback per la domanda corrispondente
+    // Gestione quiz: mostra il feedback in base alla risposta selezionata
     const quizOptions = document.querySelectorAll(".quiz-option");
     quizOptions.forEach(option => {
       option.addEventListener("click", function() {
