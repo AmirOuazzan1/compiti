@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lezione Interattiva: Bootstrap 5</title>
+  <!-- Bootstrap 5 dal CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Impostazioni generali - Nuova Palette Calda */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      overflow: hidden;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Stile slide: nuovo sfondo semi-trasparente scuro */
+    .slide {
+      display: none;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      width: 90vw;
+      height: 90vh;
+      padding: 4rem 3rem;
+      box-sizing: border-box;
+      background: rgba(20, 20, 20, 0.8);
+      border-radius: 15px;
+      backdrop-filter: blur(2px);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      overflow-y: auto;
+    }
+    
+    .active {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+    
+    .slide:not(.active) {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    
+    /* Tipografia e ombre per migliorare la leggibilità */
+    h1, h2, h3, p, li {
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    h1 { font-size: 3rem; margin-bottom: 1rem; }
+    h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    h3 { font-size: 2rem; margin-bottom: 1rem; }
+    p, li { font-size: 1.2rem; }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    ul li::before {
+      content: "✔";
+      margin-right: 0.5rem;
+      color: #FFD700;
+    }
+    
+    /* Navigazione: pulsanti aggiornati */
+    .navigation {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      z-index: 10;
+    }
+    
+    .navigation button {
+      margin-left: 10px;
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-weight: 700;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .navigation button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Info Relatore: colore di sfondo aggiornato */
+    .speaker-info {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px 15px;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+    
+    /* Stile Quiz: nuove tonalità */
+    .quiz-container {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    }
+    
+    .quiz-question {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .quiz-option {
+      margin: 10px 0;
+      padding: 15px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      transition: background 0.3s, transform 0.2s;
+      cursor: pointer;
+    }
+    
+    .quiz-option:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.02);
+    }
+    
+    .quiz-feedback {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- SLIDE 1: Introduzione -->
+  <div id="slide1" class="slide active">
+    <div class="container text-center">
+      <h1>Introduzione a Bootstrap 5</h1>
+      <p class="lead">Presentato da: Persona 1, Persona 2, Persona 3</p>
+      <p>Questa lezione interattiva vi guiderà attraverso le funzionalità e i vantaggi di Bootstrap 5, con esempi pratici e un quiz finale per testare le conoscenze.</p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 2: Cos'è Bootstrap 5? -->
+  <div id="slide2" class="slide">
+    <div class="container">
+      <h2>Cos'è Bootstrap 5?</h2>
+      <p>
+        Bootstrap 5 è un framework open source per lo sviluppo di interfacce web responsive e moderne. È stato progettato per semplificare la creazione di siti web con design pulito e funzionale, grazie a una vasta gamma di componenti predefiniti e utility che facilitano il lavoro degli sviluppatori.
+      </p>
+      <p>
+        La sua flessibilità e la capacità di personalizzazione lo rendono uno strumento ideale per realizzare progetti di ogni dimensione, dal prototipo al prodotto finale.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 3: Storia ed Evoluzione -->
+  <div id="slide3" class="slide">
+    <div class="container">
+      <h2>Storia ed Evoluzione</h2>
+      <p>
+        Lanciato originariamente da Twitter, Bootstrap ha subito numerose evoluzioni nel tempo. La versione 5, lanciata nel 2020, ha segnato un importante cambiamento eliminando la dipendenza da jQuery e introducendo nuove funzionalità e componenti.
+      </p>
+      <p>
+        Questa evoluzione ha reso Bootstrap ancora più leggero e performante, adattandosi alle esigenze moderne di sviluppo web e consentendo agli sviluppatori di creare esperienze utente ancora più dinamiche e interattive.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 4: Componenti Principali -->
+  <div id="slide4" class="slide">
+    <div class="container">
+      <h2>Componenti Principali</h2>
+      <p>
+        Bootstrap 5 offre una vasta gamma di componenti, come:
+      </p>
+      <ul>
+        <li>Navbar: menu di navigazione responsive e personalizzabile</li>
+        <li>Cards: contenitori flessibili per contenuti misti</li>
+        <li>Modals: finestre di dialogo per interazioni utente</li>
+        <li>Carousel: slider per immagini e contenuti dinamici</li>
+        <li>Alert, Badge, Button e molto altro</li>
+      </ul>
+      <p>
+        Questi componenti permettono di creare interfacce utente coerenti e funzionali, risparmiando tempo e sforzi nello sviluppo.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 5: Il Sistema a Griglia -->
+  <div id="slide5" class="slide">
+    <div class="container">
+      <h2>Il Sistema a Griglia</h2>
+      <p>
+        Il cuore di Bootstrap 5 è il suo sistema a griglia responsive, che permette di realizzare layout complessi in modo semplice e intuitivo.
+      </p>
+      <p>
+        Grazie alle classi predefinite, è possibile definire colonne, righe e container che si adattano automaticamente a schermi di diverse dimensioni, garantendo un’esperienza utente ottimale su dispositivi mobile, tablet e desktop.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 6: Utility e Personalizzazione -->
+  <div id="slide6" class="slide">
+    <div class="container">
+      <h2>Utility e Personalizzazione</h2>
+      <p>
+        Bootstrap 5 non si limita a fornire componenti predefiniti: offre anche un vasto insieme di utility per il controllo di spaziature, colori, tipografia, allineamenti e molto altro.
+      </p>
+      <p>
+        Queste utility consentono agli sviluppatori di personalizzare facilmente ogni aspetto del design, mantenendo una coerenza visiva e sfruttando al massimo le potenzialità del framework.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 7: Esempi Pratici e Casi d'Uso -->
+  <div id="slide7" class="slide">
+    <div class="container">
+      <h2>Esempi Pratici</h2>
+      <p>
+        Diversi siti web di successo utilizzano Bootstrap 5 per garantire un design moderno e responsive. Dalle piattaforme di e-commerce ai siti aziendali, il framework dimostra la sua versatilità in numerosi contesti.
+      </p>
+      <p>
+        Durante questa lezione vedremo alcuni esempi pratici e analizzeremo come personalizzare i componenti per adattarli al brand e alle esigenze specifiche del progetto.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 8: Integrazione con JavaScript -->
+  <div id="slide8" class="slide">
+    <div class="container">
+      <h2>Integrazione con JavaScript</h2>
+      <p>
+        Uno dei punti di forza di Bootstrap 5 è la sua integrazione con JavaScript. Il framework include plugin per gestire interazioni dinamiche come modali, tooltip, dropdown e carousel, offrendo un’esperienza utente fluida e interattiva.
+      </p>
+      <p>
+        L’assenza di dipendenza da jQuery nella versione 5 permette inoltre una maggiore leggerezza e performance, rendendo più semplice l’integrazione con librerie esterne e framework moderni.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 9: Vantaggi e Svantaggi -->
+  <div id="slide9" class="slide">
+    <div class="container">
+      <h2>Vantaggi e Svantaggi</h2>
+      <p>
+        <strong>Vantaggi:</strong>
+      </p>
+      <ul>
+        <li>Sviluppo rapido grazie ai componenti predefiniti</li>
+        <li>Design responsive out-of-the-box</li>
+        <li>Personalizzazione elevata con utility e variabili CSS</li>
+        <li>Comunità attiva e documentazione completa</li>
+      </ul>
+      <p>
+        <strong>Svantaggi:</strong>
+      </p>
+      <ul>
+        <li>Overhead per progetti molto semplici</li>
+        <li>Personalizzazioni estreme possono richiedere modifiche approfondite</li>
+      </ul>
+      <p>
+        In sintesi, Bootstrap 5 è uno strumento potente e versatile, ideale per chi desidera realizzare siti moderni in tempi ridotti, pur mantenendo elevate possibilità di personalizzazione.
+      </p>
+    </div>
+  </div>
+  
+  <!-- SLIDE 10: Quiz Interattivo (6 domande) -->
+  <div id="slide10" class="slide">
+    <div class="container">
+      <h2>Quiz Interattivo</h2>
+      <p>Rispondi alle seguenti domande per verificare le tue conoscenze su Bootstrap 5:</p>
+      <div class="quiz-container">
+        <!-- Domanda 1 -->
+        <div class="quiz-question" data-question="1">
+          <p><strong>Domanda 1:</strong> Cos'è Bootstrap 5?</p>
+          <div class="quiz-option" data-question="1" data-correct="true">Un framework CSS per creare siti responsive</div>
+          <div class="quiz-option" data-question="1" data-correct="false">Un linguaggio di programmazione</div>
+          <div class="quiz-option" data-question="1" data-correct="false">Un sistema operativo</div>
+          <div class="quiz-option" data-question="1" data-correct="false">Un plugin di jQuery</div>
+          <p id="quiz-feedback-1" class="quiz-feedback"></p>
+        </div>
+        <!-- Domanda 2 -->
+        <div class="quiz-question" data-question="2">
+          <p><strong>Domanda 2:</strong> Quale sistema di layout utilizza Bootstrap 5?</p>
+          <div class="quiz-option" data-question="2" data-correct="false">CSS Grid</div>
+          <div class="quiz-option" data-question="2" data-correct="true">Sistema a griglia basato su Flexbox e media query</div>
+          <div class="quiz-option" data-question="2" data-correct="false">Tabelle HTML</div>
+          <div class="quiz-option" data-question="2" data-correct="false">Posizionamento assoluto</div>
+          <p id="quiz-feedback-2" class="quiz-feedback"></p>
+        </div>
+        <!-- Domanda 3 -->
+        <div class="quiz-question" data-question="3">
+          <p><strong>Domanda 3:</strong> Quale dei seguenti è un componente tipico di Bootstrap?</p>
+          <div class="quiz-option" data-question="3" data-correct="false">Slider nativo di CSS</div>
+          <div class="quiz-option" data-question="3" data-correct="true">Navbar</div>
+          <div class="quiz-option" data-question="3" data-correct="false">Editor WYSIWYG</div>
+          <div class="quiz-option" data-question="3" data-correct="false">Libreria di animazioni</div>
+          <p id="quiz-feedback-3" class="quiz-feedback"></p>
+        </div>
+        <!-- Domanda 4 -->
+        <div class="quiz-question" data-question="4">
+          <p><strong>Domanda 4:</strong> Quale utility non fa parte di Bootstrap 5?</p>
+          <div class="quiz-option" data-question="4" data-correct="false">Spaziature</div>
+          <div class="quiz-option" data-question="4" data-correct="false">Tipografia</div>
+          <div class="quiz-option" data-question="4" data-correct="false">Colori</div>
+          <div class="quiz-option" data-question="4" data-correct="true">Gestione delle immagini vettoriali</div>
+          <p id="quiz-feedback-4" class="quiz-feedback"></p>
+        </div>
+        <!-- Domanda 5 -->
+        <div class="quiz-question" data-question="5">
+          <p><strong>Domanda 5:</strong> Bootstrap 5 è principalmente utilizzato per sviluppare:</p>
+          <div class="quiz-option" data-question="5" data-correct="true">Siti web responsive e moderni</div>
+          <div class="quiz-option" data-question="5" data-correct="false">Applicazioni desktop native</div>
+          <div class="quiz-option" data-question="5" data-correct="false">Giochi online</div>
+          <div class="quiz-option" data-question="5" data-correct="false">Database relazionali</div>
+          <p id="quiz-feedback-5" class="quiz-feedback"></p>
+        </div>
+        <!-- Domanda 6 -->
+        <div class="quiz-question" data-question="6">
+          <p><strong>Domanda 6:</strong> Quale delle seguenti NON è una dipendenza di Bootstrap 5?</p>
+          <div class="quiz-option" data-question="6" data-correct="true">jQuery</div>
+          <div class="quiz-option" data-question="6" data-correct="false">Popper</div>
+          <div class="quiz-option" data-question="6" data-correct="false">CSS</div>
+          <div class="quiz-option" data-question="6" data-correct="false">HTML</div>
+          <p id="quiz-feedback-6" class="quiz-feedback"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navigazione -->
+  <div class="navigation">
+    <button id="prevBtn" class="btn btn-secondary">Precedente</button>
+    <button id="nextBtn" class="btn btn-primary">Successivo</button>
+  </div>
+  
+  <!-- Info Relatore -->
+  <div class="speaker-info">
+    <span id="speakerName">Relatore: Persona 1</span>
+  </div>
+  
+  <!-- Script Bootstrap e nostro script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 10;
+    const speakerNames = ["Persona 1", "Persona 2", "Persona 3"];
+    
+    function showSlide(n) {
+      for (let i = 1; i <= totalSlides; i++) {
+        document.getElementById("slide" + i).classList.remove("active");
+      }
+      document.getElementById("slide" + n).classList.add("active");
+      
+      // Aggiornamento relatore: Slide 1-3: Persona 1, 4-7: Persona 2, 8-10: Persona 3
+      let speaker;
+      if(n <= 3) {
+        speaker = speakerNames[0];
+      } else if(n <= 7) {
+        speaker = speakerNames[1];
+      } else {
+        speaker = speakerNames[2];
+      }
+      document.getElementById("speakerName").textContent = "Relatore: " + speaker;
+    }
+    
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    });
+    
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      if (currentSlide > 1) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    });
+    
+    // Gestione quiz: per ogni opzione, al click mostra il feedback per la domanda corrispondente
+    const quizOptions = document.querySelectorAll(".quiz-option");
+    quizOptions.forEach(option => {
+      option.addEventListener("click", function() {
+        const isCorrect = this.getAttribute("data-correct") === "true";
+        const questionNumber = this.getAttribute("data-question");
+        const feedbackEl = document.getElementById("quiz-feedback-" + questionNumber);
+        if (isCorrect) {
+          feedbackEl.textContent = "Risposta corretta!";
+          feedbackEl.classList.remove("text-danger");
+          feedbackEl.classList.add("text-success");
+        } else {
+          feedbackEl.textContent = "Risposta sbagliata. Riprova!";
+          feedbackEl.classList.remove("text-success");
+          feedbackEl.classList.add("text-danger");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
