@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ì<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #ff6a00, #ee0979, #9b00e8);
+      background: linear-gradient(135deg, #b8b8b8, #000000, #a0a0a06e);
       background-size: 300% 300%;
       animation: gradientBG 12s ease infinite;
       color: #fff;
@@ -114,13 +114,13 @@
       background: rgba(0, 0, 0, 0.75);
       padding: 12px 25px;
       border-radius: 30px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     }
     
     /* Quiz - Card traslucide con pulsanti interattivi */
     .quiz-container {
       margin-top: 2rem;
-      background: rgba(0, 0, 0, 0.35); /* Sfondo scuro al posto del bianco */
+      background: rgba(0, 0, 0, 0.35);
       padding: 30px;
       border-radius: 20px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
@@ -153,7 +153,6 @@
       margin-top: 10px;
     }
     
-    /* Aggiunta di una transizione globale per i link */
     a {
       transition: color 0.3s;
     }
@@ -164,53 +163,52 @@
   </style>
 </head>
 <body>
-  <!-- SLIDE 1: Introduzione -->
+  <!-- SLIDE 1: Introduzione (non modificata) -->
   <div id="slide1" class="slide active">
     <div class="container text-center">
       <h1>Introduzione a Bootstrap 5</h1>
-      <!-- Immagine del logo Bootstrap -->
-      <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" class="img-fluid my-3" alt="Logo Bootstrap">
-      <p class="lead">Presentato da: Persona 1, Persona 2, Persona 3</p>
-      <p>Questa lezione interattiva vi guiderà attraverso le funzionalità e i vantaggi di Bootstrap 5, con esempi pratici e un quiz finale per mettere alla prova le vostre conoscenze.</p>
+      <p class="lead">Lezione realizzata da: Amir Ouazzani, Federico Tridentino, Davide Bisceglie</p>
+      <p class="lead">Presentata da: Amir Ouazzani</p>
+      <p>Questa lezione interattiva vi guiderà attraverso le funzionalità e i vantaggi di Bootstrap 5.</p>
     </div>
   </div>
   
-  <!-- SLIDE 2: Cos'è Bootstrap 5? -->
+  <!-- SLIDE 2: Cos'è Bootstrap 5? (Testo esteso) -->
   <div id="slide2" class="slide">
     <div class="container">
       <h2>Cos'è Bootstrap 5?</h2>
-      <!-- Immagine esplicativa su Bootstrap -->
-      <img src="https://via.placeholder.com/800x400?text=Cos'è+Bootstrap+5?" class="img-fluid my-3" alt="Cos'è Bootstrap 5">
       <p>
         Bootstrap 5 è un framework open source per lo sviluppo di interfacce web responsive e moderne. Progettato per semplificare la creazione di siti web dal design pulito e funzionale, include una vasta gamma di componenti e utility.
       </p>
       <p>
-        La sua flessibilità lo rende ideale per ogni tipo di progetto, dal prototipo al prodotto finito.
+        Grazie alla sua struttura modulare, è possibile utilizzare solo le parti necessarie per il proprio progetto, riducendo così il carico di lavoro e migliorando le prestazioni del sito. Inoltre, la documentazione completa e la comunità attiva rendono Bootstrap uno strumento ideale per chi sta iniziando.
+      </p>
+      <p>
+        Bootstrap consente di realizzare interfacce utente sofisticate con poche righe di codice e si integra facilmente con altri framework e librerie.
       </p>
     </div>
   </div>
   
-  <!-- SLIDE 3: Storia ed Evoluzione -->
+  <!-- SLIDE 3: Storia ed Evoluzione (Testo esteso) -->
   <div id="slide3" class="slide">
     <div class="container">
       <h2>Storia ed Evoluzione</h2>
-      <!-- Immagine timeline o evoluzione -->
-      <img src="https://via.placeholder.com/800x400?text=Storia+ed+Evoluzione" class="img-fluid my-3" alt="Storia ed Evoluzione">
       <p>
-        Originariamente sviluppato da Twitter, Bootstrap ha conosciuto molte evoluzioni. La versione 5, rilasciata nel 2020, elimina la dipendenza da jQuery e introduce nuove funzionalità per un'esperienza più leggera e performante.
+        Originariamente sviluppato da Twitter per facilitare la coerenza del design interno, Bootstrap ha conosciuto molte evoluzioni nel corso degli anni. La sua prima versione è stata rilasciata con l'obiettivo di standardizzare il modo in cui venivano creati i siti web.
       </p>
       <p>
-        Questo aggiornamento ha aperto nuove possibilità per creare interfacce utente moderne e dinamiche.
+        Nel tempo, il framework è stato costantemente aggiornato, introducendo nuove funzionalità e miglioramenti, fino a raggiungere la versione 5, che elimina la dipendenza da jQuery e offre un'esperienza più leggera e moderna.
+      </p>
+      <p>
+        Questa evoluzione ha permesso a Bootstrap di rimanere uno strumento fondamentale per sviluppatori e designer, adattandosi alle nuove esigenze del web.
       </p>
     </div>
   </div>
   
-  <!-- SLIDE 4: Componenti Principali -->
+  <!-- SLIDE 4: Componenti Principali (Testo invariato) -->
   <div id="slide4" class="slide">
     <div class="container">
       <h2>Componenti Principali</h2>
-      <!-- Immagine dei componenti -->
-      <img src="https://via.placeholder.com/800x400?text=Componenti+Bootstrap" class="img-fluid my-3" alt="Componenti Bootstrap">
       <p>
         Bootstrap 5 include numerosi componenti, come:
       </p>
@@ -218,7 +216,7 @@
         <li>Navbar: menu di navigazione responsive</li>
         <li>Cards: contenitori flessibili per vari contenuti</li>
         <li>Modals: finestre di dialogo per interazioni</li>
-        <li>Carousel: slider per immagini e contenuti dinamici</li>
+        <li>Carousel: slider per contenuti dinamici</li>
         <li>Alert, Badge, Button e molto altro</li>
       </ul>
       <p>
@@ -227,70 +225,49 @@
     </div>
   </div>
   
-  <!-- SLIDE 5: Il Sistema a Griglia -->
+  <!-- SLIDE 5: Il Sistema a Griglia (Testo esteso) -->
   <div id="slide5" class="slide">
     <div class="container">
       <h2>Il Sistema a Griglia</h2>
-      <!-- Immagine del sistema a griglia -->
-      <img src="https://via.placeholder.com/800x400?text=Sistema+a+Griglia" class="img-fluid my-3" alt="Sistema a Griglia">
       <p>
-        Il cuore di Bootstrap 5 è il suo sistema a griglia responsive. Con poche classi, è possibile creare layout complessi che si adattano a qualsiasi dispositivo, da mobile a desktop.
+        Il cuore di Bootstrap 5 è il suo sistema a griglia responsive. Utilizzando una struttura a 12 colonne, è possibile organizzare i contenuti in modo flessibile e adattabile a vari dispositivi.
       </p>
       <p>
-        Le colonne, le righe e i container si adattano automaticamente per garantire la migliore esperienza utente.
+        Con poche classi come <code>.container</code>, <code>.row</code> e <code>.col</code>, è possibile creare layout complessi che si adattano automaticamente alle dimensioni dello schermo, garantendo un'esperienza utente ottimale su desktop, tablet e smartphone.
       </p>
     </div>
   </div>
   
-  <!-- SLIDE 6: Utility e Personalizzazione -->
+  <!-- SLIDE 6: Utility e Personalizzazione (Testo esteso) -->
   <div id="slide6" class="slide">
     <div class="container">
       <h2>Utility e Personalizzazione</h2>
       <p>
-        Oltre ai componenti, Bootstrap 5 offre un ricco insieme di utility per gestire spaziature, colori, tipografia e allineamenti. Questo permette una personalizzazione completa del design.
+        Bootstrap 5 offre una vasta gamma di classi di utilità che permettono di gestire margini, padding, colori, tipografia e allineamenti senza scrivere CSS personalizzato. Queste classi rendono lo sviluppo molto più veloce e flessibile.
       </p>
       <p>
-        Potrete così mantenere coerenza visiva sfruttando al massimo il framework.
+        Inoltre, è possibile personalizzare il framework utilizzando variabili Sass e compilando una versione personalizzata dei file CSS, adattandoli al design del proprio progetto.
       </p>
     </div>
   </div>
   
-  <!-- SLIDE 7: Esempi Pratici -->
+  <!-- SLIDE 7: Integrazione con JavaScript (Testo esteso) -->
   <div id="slide7" class="slide">
     <div class="container">
-      <h2>Esempi Pratici</h2>
-      <!-- Immagine esempi pratici -->
-      <img src="https://via.placeholder.com/800x400?text=Esempi+Pratici" class="img-fluid my-3" alt="Esempi Pratici">
+      <h2>Integrazione con JavaScript</h2>
       <p>
-        Molti siti web di successo usano Bootstrap 5 per garantire un design moderno e responsive. Dalle piattaforme di e-commerce ai siti aziendali, il framework si adatta a ogni esigenza.
+        Bootstrap 5 integra diversi plugin JavaScript che permettono di aggiungere interattività al sito, come modali, tooltip, dropdown e carousel. Questi plugin sono progettati per funzionare senza jQuery, rendendo il framework più leggero.
       </p>
       <p>
-        In questa lezione analizzeremo alcuni casi d'uso e vedremo come personalizzare i componenti per rispecchiare il brand.
+        Grazie a questa integrazione, è possibile creare transizioni fluide e interazioni dinamiche, migliorando l'esperienza utente senza dover scrivere molto codice JavaScript da zero.
       </p>
     </div>
   </div>
   
-  <!-- SLIDE 8: Integrazione con JavaScript -->
+  <!-- SLIDE 8: Vantaggi e Svantaggi (Testo invariato) -->
   <div id="slide8" class="slide">
     <div class="container">
-      <h2>Integrazione con JavaScript</h2>
-      <!-- Immagine integrazione con JavaScript -->
-      <img src="https://via.placeholder.com/800x400?text=Integrazione+con+JavaScript" class="img-fluid my-3" alt="Integrazione con JavaScript">
-      <p>
-        Uno dei punti di forza di Bootstrap 5 è la sua integrazione con JavaScript. Il framework include plugin per gestire modali, tooltip, dropdown e carousel, offrendo interazioni fluide e dinamiche.
-      </p>
-      <p>
-        L'assenza di jQuery rende Bootstrap più leggero e facilmente integrabile con altre librerie e framework moderni.
-      </p>
-    </div>
-  </div>
-  
-  <!-- SLIDE 9: Vantaggi e Svantaggi -->
-  <div id="slide9" class="slide">
-    <div class="container">
       <h2>Vantaggi e Svantaggi</h2>
-      <!-- Immagine vantaggi e svantaggi -->
-      <img src="https://via.placeholder.com/800x400?text=Vantaggi+e+Svantaggi" class="img-fluid my-3" alt="Vantaggi e Svantaggi">
       <p><strong>Vantaggi:</strong></p>
       <ul>
         <li>Sviluppo rapido con componenti predefiniti</li>
@@ -309,10 +286,10 @@
     </div>
   </div>
   
-  <!-- SLIDE 10: Quiz Interattivo -->
-  <div id="slide10" class="slide">
+  <!-- SLIDE 9: Quiz Interattivo (Testo esteso) -->
+  <div id="slide9" class="slide">
     <div class="container">
-      <h2>Quiz Interattivo</h2>
+      <h2>Quiz Conclusivo</h2>
       <p>Mettete alla prova le vostre conoscenze su Bootstrap 5:</p>
       <div class="quiz-container">
         <!-- Domanda 1 -->
@@ -369,6 +346,9 @@
           <div class="quiz-option" data-question="6" data-correct="false">HTML</div>
           <p id="quiz-feedback-6" class="quiz-feedback"></p>
         </div>
+        <p>
+          Dopo aver risposto alle domande, discuteremo insieme le risposte per chiarire ogni dubbio.
+        </p>
       </div>
     </div>
   </div>
@@ -381,15 +361,16 @@
   
   <!-- Info Relatore -->
   <div class="speaker-info">
-    <span id="speakerName">Relatore: Persona 1</span>
+    <span id="speakerName">Relatore: Federico Tridentino</span>
   </div>
   
   <!-- Script Bootstrap e nostro script personalizzato -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Aggiornamento: numero di slide ridotto a 9 (rimosso "Esempi Pratici")
     let currentSlide = 1;
-    const totalSlides = 10;
-    const speakerNames = ["Persona 1", "Persona 2", "Persona 3"];
+    const totalSlides = 9;
+    const speakerNames = ["Federico Tridentino", "Amir Ouazzani", "Davide Bisceglie"];
     
     function showSlide(n) {
       for (let i = 1; i <= totalSlides; i++) {
@@ -397,11 +378,11 @@
       }
       document.getElementById("slide" + n).classList.add("active");
       
-      // Aggiornamento relatore: Slide 1-3: Persona 1, 4-7: Persona 2, 8-10: Persona 3
+      // Aggiornamento relatore: Slide 1-3: Federico Tridentino, 4-6: Amir Ouazzani, 7-9: Davide Bisceglie
       let speaker;
       if(n <= 3) {
         speaker = speakerNames[0];
-      } else if(n <= 7) {
+      } else if(n <= 6) {
         speaker = speakerNames[1];
       } else {
         speaker = speakerNames[2];
